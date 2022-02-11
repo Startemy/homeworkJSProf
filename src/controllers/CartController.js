@@ -33,6 +33,11 @@ export default class CartController {
     this.btnClk = event
     if (!this.btnClk.target.hasAttribute('data-count')) {
       this.btnClk.target.innerHTML = 'Added';
+
+      // /**Добавить колиxество в data-count - надо подумать? Думаю лучше менять количество в корзине */
+      let i = 1;
+      this.btnClk.target.setAttribute('data-count', `${i}`);
+      let quantyti = Number(event.target.getAttribute('data-count'))
     }
   }
 }
