@@ -1,6 +1,6 @@
 import CartView from "../view/CartView"
 
-export default class CartController {
+export default class CartController{
   constructor (cart, eventEmitter){
     this.eventEmitter = eventEmitter
     this.cart = cart
@@ -24,15 +24,7 @@ export default class CartController {
 
   selectorBtn(){
     this.btn = document.querySelectorAll('.btn_cart').forEach((button) => {
-      button.addEventListener('click', this.clickOnBtn);
-      })
-  }
-
-  clickOnBtn(event){
-    /**Меняем текст на добавленно */
-    this.btnClk = event
-    if (!this.btnClk.target.hasAttribute('data-count')) {
-      this.btnClk.target.innerHTML = 'Added';
-    }
+      button.addEventListener('click', CartView.clickOnBtn);
+    })
   }
 }
